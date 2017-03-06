@@ -18,7 +18,7 @@ public class Particule {
     	//calcul de la distance entre deux particules
     	return (Math.sqrt(Math.pow((P1.x-P2.x),2) +Math.pow((P1.y-P2.y),2)));
     }
-    public Force force (Particule P1, Particule P2) {
+    public static Force force (Particule P1, Particule P2) {
     	//calcul de la force entre deux particules, gravitationelle par d�faut
     	return new Force(0,0);
     	
