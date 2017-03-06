@@ -7,5 +7,10 @@ public class Force {
 		Fx=x;
 		Fy=y;
 	}
+	
+	public Force moins(){
+		return new Force(-this.Fx,-this.Fy);
+		
+	}
 
 }

@@ -4,7 +4,7 @@ public class Calcul1ForceParticule implements Runnable {
 	
 	Particule A;
 	Particule B;
-	Force f;
+	
 
 
 
@@ -16,7 +16,8 @@ public class Calcul1ForceParticule implements Runnable {
 	}
 	
 	public void run ( ) {
-		f= Particule.force(this.A,this.B);
+		A.force[B.num]=Particule.force(this.A,this.B).moins();
+		B.force[A.num]=Particule.force(this.A,this.B);
 	
 	}
 }

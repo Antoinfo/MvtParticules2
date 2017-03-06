@@ -1,4 +1,6 @@
 public class Particule {
+	
+	public int num;
     public double x;
     public double y;
     public double vx;
@@ -6,12 +8,13 @@ public class Particule {
     public Force[] force;
    
     
-    public Particule (double x, double y, double vx, double vy, Force[] force){
+    public Particule (double x, double y, int i, double vx, double vy, Force[] force){
     	this.x=x;
     	this.y=y;
     	this.vx=vx;
     	this.vy=vy;
     	this.force=force;
+    	this.num=i;
     }
     
     public double distance (Particule P1, Particule P2){
@@ -20,6 +23,9 @@ public class Particule {
     }
     public static Force force (Particule P1, Particule P2) {
     	//calcul de la force entre deux particules, gravitationelle par d�faut
+    	if (P1.num==P2.num){
+    		return new Force(0,0);
+    	}
     	return new Force(0,0);
     	
     }
