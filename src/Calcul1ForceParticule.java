@@ -4,7 +4,7 @@ public class Calcul1ForceParticule implements Runnable {
 	
 	Particule A;
 	Particule B;
-	double [] Force;
+	Force f;
 
 
 
@@ -16,7 +16,7 @@ public class Calcul1ForceParticule implements Runnable {
 	}
 	
 	public void run ( ) {
-		Force= Force(this.A,this.B);
+		f= Particule.force(this.A,this.B);
 	
 	}
 }
