@@ -5,7 +5,8 @@ public class Particule {
     public double y;
     public double vx;
     public double vy;
-    public Force[] force;
+    public int masse;
+    public Force[] force; // toutes les forces et une case de plus pour la somme ?
    
     
     public Particule (double x, double y, int i, double vx, double vy, Force[] force){
@@ -27,6 +28,15 @@ public class Particule {
     		return new Force(0,0);
     	}
     	return new Force(0,0);
+    	
+    }
+    
+    public void UpdatePosSpeed( Force f, double pas){
+    	
+    	x+=vx*pas;
+    	y+=vy*pas;
+    	vx=+f.Fx*pas;
+    	vy+=f.Fy*pas;
     	
     }
 
