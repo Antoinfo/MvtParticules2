@@ -19,7 +19,8 @@ public class Configuration {
 	Particule[] Particules;
 	public double pas;
 	//pas de temps utilis�
-	final int N=Particules.length;
+	//final int N=Particules.length;
+	final int N=4;
 
 
 
