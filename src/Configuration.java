@@ -1,4 +1,5 @@
 
+
 public class Configuration {
 
 	//main class
@@ -22,7 +23,7 @@ public class Configuration {
 
 
 
-	public Configuration (int nbr, Particule [] entre, double pas){
+	public Configuration ( Particule [] entre, double pas){
 
 		this.Particules=entre;
 		this.pas=pas;
@@ -70,6 +71,14 @@ public class Configuration {
 			tabthread[j]=new Thread(s);
 			tabthread[j].start();
 		}
+		for (int j=0;j<N;j++){
+			try {
+				tabthread[j].join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
 
 
@@ -77,7 +86,24 @@ public class Configuration {
 
 	}
 
-	public void Affichage (){
+	/*public void Affichage (Graphics g){
+		for (int i=0; i<this.Particules.length; i++){
+			this.Particules[i].Affiche(g);
+		}
 
+	}*/
+	
+    public static void main (String args[]){
+    	Force[] initial= {new Force(0,0),new Force(0,0),new Force(0,0),new Force(0,0)};
+		Particule P1=new Particule(1,2,1,5,4,initial);
+		Particule P2=new Particule(0,3,1,5,4,initial);
+		Particule P3=new Particule(1,3,1,5,4,initial);
+		Particule P4=new Particule(0,2,1,5,4,initial);
+		Particule[] entre={P1,P2,P3,P4};
+		Configuration init= new Configuration(entre,1);
+		init.nextConfig();
+		System.out.println(init);
+    }
+	
 	}
-}
+

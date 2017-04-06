@@ -12,5 +12,8 @@ public class Force {
 		return new Force(-this.Fx,-this.Fy);
 		
 	}
+	public Force somme(Force f, Force g){
+		return new Force(f.Fx+g.Fx, f.Fy+g.Fy);
+	}
 
 }

@@ -1,3 +1,4 @@
+
 public class Particule {
 	
 	public int num;
@@ -39,5 +40,10 @@ public class Particule {
     	vy+=f.Fy*pas;
     	
     }
+    public void Affiche(Graphics g){
+    	
+    	g.drawLine((Math.round((float)(this.x))), Math.round((float)this.y), Math.round((float)(this.x)), Math.round((float)this.y));
+    }
+
 
 }

@@ -1,4 +1,4 @@
-
+import java.math.*;
 public class NewPos implements Runnable  {
 
 
@@ -18,15 +18,47 @@ public class NewPos implements Runnable  {
 	}
 
 
-	public void run ( ) {
+	public void run ( ) {//lance les n petits threads
+		
+		
+		
 		int n=elements.length;
 		
+		double k=Math.log(n)/Math.log(2);
 		
+		Force[][]  tableau = new  Force[n][(int) (k+1)];
+		
+		for (int i=0;i<n;i++){
+			tableau[i][0]=elements[numero].force[i];
+			for(int j=1; j<k+1;j++){
+				tableau[i][j]=null;
+			}
+		}
+		//initialisation de la première ligne avec les forces puis du reste à 0.
+		//Remarque: ici en initialisant le tableau on perd l'avantage du parallélisme car l'initialisation est en  n*ln(n)
+				
+		
+		Thread[] tab= new Thread[n];
+		for (int i=0; i<n; i++){
+			tab[i]=new SommePartielle(n,i,tableau);
+			tab[i].start();
+			
+			}
+		for (int i=0; i<n; i++){
+			try {
+				tab[i].join();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		//java voulait absolument mettre un try/catch ici
+		}
+	
 		// faire le saut de pointeur sur les forces des particules: A FAIRE
 		
-		// puis faire postion aprÃ¨s cette somme
+		// puis faire postion après cette somme
 		
-		Force ftot=elements[numero].force[n];
+		Force ftot=tableau[n][(int) (k+1)];
 		
 		
 		elements[numero].UpdatePosSpeed(ftot, pas);
