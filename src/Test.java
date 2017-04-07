@@ -13,13 +13,13 @@ public class Test {
 			entre[j]=new Particule(j*10,j*10,j,0,0,initial);
 		}
 		Configuration init= new Configuration(entre,1);
-		//Fenetre fen=new Fenetre(init);
+		Fenetre fen=new Fenetre(init);
     	
 		
 		/*Force[] initial= {new Force(0,0),new Force(0,0),new Force(0,0),new Force(0,0)};
 		Particule P1=new Particule(100,2,0,0,0,initial);
 		Particule P2=new Particule(0,300,1,0,0,initial);
-		Particule P3=new Particule(165,320,2,0,0,initial);
+		Particule P3=new Particule(5,320,2,0,0,initial);
 		Particule P4=new Particule(400,780,3,0,0,initial);
 		Particule[] entre={P1,P2,P3,P4};
 		Configuration init= new Configuration(entre,1);
@@ -48,12 +48,13 @@ public class Test {
     	
     Force[] tab=new Force[16];		
     for (int i=0; i<16; i++){ tab[i]=new Force(i,i);}
-    
+    Force[] tab2=new Force[16];	
+    for (int i=0; i<5; i++){ tab2[i]=new Force(i,i);}
     int k=3;
-	for (int i=0;i<=k;i++){
+	for (int i=0;i<=3;i++){
 		Thread[] tabthread= new Thread[n];
 		for (int j=0;j<n; j++){
-			SautDepointeurs sdp= new SautDepointeurs(tab, j,i);
+			SautDepointeurs sdp= new SautDepointeurs(tab,tab2, j,i);
 			tabthread[j]=new Thread(sdp );
 			tabthread[j].start();
 			
@@ -67,16 +68,25 @@ public class Test {
 				e.printStackTrace();
 			}
 			
+			
 		}
 		for (int t=0; t<tab.length; t++){
-		System.out.println(tab[t].Fx );
+			
+			System.out.println(tab2[t].Fx );
+			
+			}
+for (int j=0;j<n; j++){
+				
+			
+			tab[j]=tab2[j];
+			}
+		
+		
+	
 		}
-		
-		
-	
+
 	}
-	}
-	
+
 	//}
 	
 }

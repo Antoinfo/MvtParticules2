@@ -3,6 +3,7 @@ public class NewPos implements Runnable  {
 
 
 	Particule [] elements;
+	Particule [] elements2;
 	int numero; // pour l'instant une thread= calcul pos une particule, plus tard faire num 1 , num 2 et i va de num 1 à num 2
 	double pas;
 	//on doit faire un saut de pointeur ensuite
@@ -58,10 +59,17 @@ public class NewPos implements Runnable  {
 		
 		// puis faire postion apr�s cette somme
 		*/
+		
+		Force [] t2=new Force[n];
+		
+		for (int j=0;j<n; j++){
+			
+				t2[j]=elements[numero].force[j];
+		}
 		for (int i=0;i<=k;i++){
 			Thread[] tabthread= new Thread[n];
 			for (int j=0;j<n; j++){
-				SautDepointeurs sdp= new SautDepointeurs(elements[numero].force, j,i);
+				SautDepointeurs sdp= new SautDepointeurs(elements[numero].force,t2, j,i);
 				tabthread[j]=new Thread(sdp );
 				tabthread[j].start();
 				
@@ -76,7 +84,11 @@ public class NewPos implements Runnable  {
 				}
 				
 			}
+			for (int j=0;j<n; j++){
+				
 			
+			elements[numero].force[j]=t2[j];
+			}
 			
 		}
 		Force ftot=elements[numero].force[0];
