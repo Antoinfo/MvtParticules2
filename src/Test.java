@@ -10,7 +10,7 @@ public class Test {
 			initial[j]=new Force(0,0);
 		}
 		for (int j=0; j<n;j++){
-			entre[j]=new Particule(j*10,j*10,j,0,0,initial);
+			entre[j]=new Particule(j*10,j*10,j,0,0,initial,j);
 		}
 		Configuration init= new Configuration(entre,0.01);
 		Fenetre fen=new Fenetre(init);

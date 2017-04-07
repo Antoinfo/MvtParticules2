@@ -21,14 +21,15 @@ public class Particule {
     	this.y = y ;
     }
     
-    public Particule (double x, double y, int i, double vx, double vy, Force[] force){
+    public Particule (double x, double y, int i, double vx, double vy, Force[] force,int m){
     	this.x=x;
     	this.y=y;
     	this.vx=vx;
     	this.vy=vy;
     	this.force=force;
     	this.num=i;
-    	this.masse=10;
+    	this.masse=m;
+    	
     }
     public void setvX(double vx) {
     	this.vx=vx;
@@ -44,14 +45,7 @@ public class Particule {
     	return (Math.sqrt(Math.pow((P1.x-P2.x),2) +Math.pow((P1.y-P2.y),2)));
     }
     
- public void UpdateF( Force f, double pas){
-    	
-    	x+=vx*pas;
-    	y+=vy*pas;
-    	vx=+f.Fx*pas;
-    	vy+=f.Fy*pas;
-    	
-    }
+
    
     
     public void UpdatePosSpeed( Force f, double pas){
