@@ -20,7 +20,7 @@ public class Configuration {
 	public double pas;
 	//pas de temps utilis�
 	//final int N=Particules.length;
-	final int N=4;
+	final int N=16;
 
 
 

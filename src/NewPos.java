@@ -69,7 +69,7 @@ public class NewPos implements Runnable  {
 				t2[j]=elements[numero].force[j];
 		}
 		
-		//ici on lance à chaque fois des threads, il faudrait en réalité lancer n threads au début, puis modifié l'opération mais ne pas créer à chaque fois de nouvelle thread
+		//ici on lance à chaque fois des threads, il faudrait en réalité lancer n threads au début, puis modifier l'opération mais ne pas créer à chaque fois de nouvelle thread
 		// a la place d'un join on implementerait un compteur (en utilisant les wait et notifyALl propre à tout objet java
 		// a chaque étape on relance le compteur à zero, quand le compteur arrive à n on relance toutes les threads (équivalent à un join)
 		for (int i=0;i<=k;i++){
