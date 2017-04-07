@@ -12,7 +12,7 @@ public class Test {
 		for (int j=0; j<n;j++){
 			entre[j]=new Particule(j*10,j*10,j,0,0,initial);
 		}
-		Configuration init= new Configuration(entre,1);
+		Configuration init= new Configuration(entre,0.01);
 		Fenetre fen=new Fenetre(init);
     	
 		

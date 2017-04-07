@@ -43,6 +43,15 @@ public class Particule {
     	//calcul de la distance entre deux particules
     	return (Math.sqrt(Math.pow((P1.x-P2.x),2) +Math.pow((P1.y-P2.y),2)));
     }
+    
+ public void UpdateF( Force f, double pas){
+    	
+    	x+=vx*pas;
+    	y+=vy*pas;
+    	vx=+f.Fx*pas;
+    	vy+=f.Fy*pas;
+    	
+    }
    
     
     public void UpdatePosSpeed( Force f, double pas){

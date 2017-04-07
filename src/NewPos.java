@@ -61,6 +61,8 @@ public class NewPos implements Runnable  {
 		*/
 		
 		Force [] t2=new Force[n];
+		//on crée ce tableau pour servir d'intermédiaire pendant le saut de pointeur
+		//ce tableau a la meme valeur que elements[numero].force
 		
 		for (int j=0;j<n; j++){
 			
@@ -98,7 +100,7 @@ public class NewPos implements Runnable  {
 			}
 			
 		}
-		Force ftot=elements[numero].force[0];
+		Force ftot=elements[numero].force[n-1];
 		
 		
 		elements[numero].UpdatePosSpeed(ftot, pas);
