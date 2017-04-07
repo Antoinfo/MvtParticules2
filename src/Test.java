@@ -1,5 +1,11 @@
 import javax.swing.JFrame;
 
+import Concurrent.Configuration;
+import Concurrent.SautDepointeurs;
+import Graphic.Fenetre;
+import Physics.Force;
+import Physics.Particule;
+
 public class Test {
 
 	public static void main (String args[]){

@@ -1,3 +1,5 @@
+package Concurrent;
+import Physics.Particule;
 
 public class GrosThread implements Runnable {
 
@@ -20,7 +22,7 @@ public class GrosThread implements Runnable {
 		
 		// le faire pour soi-même ?? j=numero ? le remettre à 0s
 
-		for (int j=0;j<n-numero;j++){
+		for (int j=1;j<n-numero;j++){
 			
 			
 			Calcul1ForceParticule s= new Calcul1ForceParticule(elements[numero], elements[j+numero]);
@@ -28,7 +30,7 @@ public class GrosThread implements Runnable {
 			tabthread[j].start();
 		}
 		
-		for (int j=0;j<n-numero;j++){
+		for (int j=1;j<n-numero;j++){
 			
 			
 			

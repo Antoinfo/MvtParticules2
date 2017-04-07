@@ -1,3 +1,6 @@
+package Concurrent;
+import Physics.Force;
+import Physics.Particule;
 
 public class Calcul1ForceParticule implements Runnable { 
 	

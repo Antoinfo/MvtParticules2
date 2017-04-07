@@ -1,3 +1,4 @@
+package Physics;
 //import com.sun.prism.Graphics;
 
 public class Particule {

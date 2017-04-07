@@ -1,4 +1,8 @@
+package Concurrent;
 import java.math.*;
+
+import Physics.Force;
+import Physics.Particule;
 public class NewPos implements Runnable  {
 
 

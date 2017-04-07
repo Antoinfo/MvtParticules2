@@ -1,4 +1,8 @@
+package Concurrent;
 import javax.swing.JFrame;
+
+import Physics.Particule;
+
 import java.math.*;
 public class Configuration {
 
@@ -16,7 +20,7 @@ public class Configuration {
 	//Particule[] config= new Particule[N];
 	//double[] a= new double[N];
 
-	Particule[] Particules;
+	public Particule[] Particules;
 	public double pas;
 	//pas de temps utilis�
 	//final int N=Particules.length;

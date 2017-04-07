@@ -1,9 +1,10 @@
+package Physics;
 
 public class Force {
-	double Fx;
-	double Fy;
+	public double Fx;
+	public double Fy;
 	
-	Force (double x,double y){
+	public Force (double x,double y){
 		Fx=x;
 		Fy=y;
 	}

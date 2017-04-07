@@ -1,5 +1,8 @@
+package Graphic;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import Concurrent.Configuration;
 
 
 public class Fenetre extends JFrame{
@@ -46,6 +49,7 @@ public class Fenetre extends JFrame{
 			}
 		
 			config.nextConfig();
+			
 		}
 	}
 

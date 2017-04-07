@@ -1,3 +1,5 @@
+package Concurrent;
+import Physics.Force;
 
 public class SautDepointeurs implements Runnable{
 
@@ -6,7 +8,7 @@ Force []t2;
 int i;
 int k;
 
- SautDepointeurs( Force[] t1,Force[] t2, int i, int k){
+ public SautDepointeurs( Force[] t1,Force[] t2, int i, int k){
 	this.t1=t1;
 	this.t2=t2;
 	this.i=i;
