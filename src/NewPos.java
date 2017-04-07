@@ -34,8 +34,8 @@ public class NewPos implements Runnable  {
 				tableau[i][j]=null;
 			}
 		}
-		//initialisation de la première ligne avec les forces puis du reste à 0.
-		//Remarque: ici en initialisant le tableau on perd l'avantage du parallélisme car l'initialisation est en  n*ln(n)
+		//initialisation de la premiï¿½re ligne avec les forces puis du reste ï¿½ 0.
+		//Remarque: ici en initialisant le tableau on perd l'avantage du parallï¿½lisme car l'initialisation est en  n*ln(n)
 				
 		
 		Thread[] tab= new Thread[n];
@@ -56,12 +56,12 @@ public class NewPos implements Runnable  {
 	
 		// faire le saut de pointeur sur les forces des particules: A FAIRE
 		
-		// puis faire postion après cette somme
+		// puis faire postion aprï¿½s cette somme
 		*/
 		for (int i=0;i<=k;i++){
 			Thread[] tabthread= new Thread[n];
 			for (int j=0;j<n; j++){
-				SautDepointeurs sdp= new SautDepointeurs(elements[numero].force, j);
+				SautDepointeurs sdp= new SautDepointeurs(elements[numero].force, j,i);
 				tabthread[j]=new Thread(sdp );
 				tabthread[j].start();
 				

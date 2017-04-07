@@ -13,7 +13,7 @@ public class Test {
 			entre[j]=new Particule(j*10,j*10,j,0,0,initial);
 		}
 		Configuration init= new Configuration(entre,1);
-		Fenetre fen=new Fenetre(init);
+		//Fenetre fen=new Fenetre(init);
     	
 		
 		/*Force[] initial= {new Force(0,0),new Force(0,0),new Force(0,0),new Force(0,0)};
@@ -45,7 +45,7 @@ public class Test {
 				e.printStackTrace();
 		//fenetre.go();
 		}*/
-    /*		
+    	
     Force[] tab=new Force[16];		
     for (int i=0; i<16; i++){ tab[i]=new Force(i,i);}
     
@@ -53,7 +53,7 @@ public class Test {
 	for (int i=0;i<=k;i++){
 		Thread[] tabthread= new Thread[n];
 		for (int j=0;j<n; j++){
-			SautDepointeurs sdp= new SautDepointeurs(tab, j);
+			SautDepointeurs sdp= new SautDepointeurs(tab, j,i);
 			tabthread[j]=new Thread(sdp );
 			tabthread[j].start();
 			
@@ -71,13 +71,14 @@ public class Test {
 		for (int t=0; t<tab.length; t++){
 		System.out.println(tab[t].Fx );
 		}
-		*/
+		
 		
 	
-	
+	}
+	}
 	
 	//}
-	}
+	
 }
 
 
