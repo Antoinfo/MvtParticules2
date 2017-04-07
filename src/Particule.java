@@ -52,7 +52,7 @@ public class Particule {
     	
     	x+=vx*pas;
     	y+=vy*pas;
-    	vx=+f.Fx*pas;
+    	vx+=f.Fx*pas;
     	vy+=f.Fy*pas;
     	
     }

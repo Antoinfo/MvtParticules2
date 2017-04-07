@@ -20,14 +20,15 @@ public class Configuration {
 	public double pas;
 	//pas de temps utilis�
 	//final int N=Particules.length;
-	final int N=16;
+	 int N=16;
 
 
 
-	public Configuration ( Particule [] entre, double pas){
+	public Configuration (int n, Particule [] entre, double pas){
 
 		this.Particules=entre;
 		this.pas=pas;
+		this.N=n;
 
 	}
 

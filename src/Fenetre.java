@@ -22,7 +22,7 @@ public class Fenetre extends JFrame{
 	}
 	public void go(){
 		
-		for (int i=0; i<100; i++){
+		for (int i=0; i<1000; i++){
 			int[] X= new int[this.config.Particules.length];
 			int[] Y= new int[this.config.Particules.length];
 			for(int j=0; j<this.config.Particules.length; j++){

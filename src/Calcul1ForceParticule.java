@@ -17,8 +17,8 @@ public class Calcul1ForceParticule implements Runnable {
 	}
 	
 	public void run ( ) {
-		A.force[B.num]=Force.force(this.A,this.B).moins();
-		B.force[A.num]=Force.force(this.A,this.B);
+		A.force[B.num]=Force.force(this.A,this.B);
+		B.force[A.num]=Force.force(this.A,this.B).moins();
 	
 	}
 }
