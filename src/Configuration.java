@@ -1,5 +1,5 @@
-
-
+import javax.swing.JFrame;
+import java.math.*;
 public class Configuration {
 
 	//main class
@@ -82,10 +82,11 @@ public class Configuration {
 		}
 
 
-
-
-
+    
 	}
+	 public static void impress(Configuration conf){
+    	 for (int i=0;i<conf.Particules.length; i++) Particule.impressParticule(conf.Particules[i]);
+     }//permet d'afficher une configuration, en affichant les positions de toutes ses particules
 
 	/*public void Affichage (Graphics g){
 		for (int i=0; i<this.Particules.length; i++){
@@ -94,17 +95,7 @@ public class Configuration {
 
 	}*/
 	
-    public static void main (String args[]){
-    	Force[] initial= {new Force(0,0),new Force(0,0),new Force(0,0),new Force(0,0)};
-		Particule P1=new Particule(1,2,1,5,4,initial);
-		Particule P2=new Particule(0,3,1,5,4,initial);
-		Particule P3=new Particule(1,3,1,5,4,initial);
-		Particule P4=new Particule(0,2,1,5,4,initial);
-		Particule[] entre={P1,P2,P3,P4};
-		Configuration init= new Configuration(entre,1);
-		init.nextConfig();
-		System.out.println(init);
-    }
+    
 	
 	}
 

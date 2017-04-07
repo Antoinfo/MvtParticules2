@@ -2,7 +2,7 @@
 public  class SommePartielle extends Thread {
 
     int k;
-    int pos,i;
+    int pos;
     Force[][] t;
     
     SommePartielle(int n, int position, Force[][] tab){
@@ -12,10 +12,10 @@ public  class SommePartielle extends Thread {
     }
     
     public void run(){
-    	int i,j;
     	
-    for(i=1;i<=k; i++){
-    	j= (pos-1)<<(i-1);
+    	
+    for(int i=1;i<k; i++){
+    	int j= pos-(1<<(i-1));
     	if (j>=0){
     		while(t[j][i-1]==null){}
     		Force f=t[pos][i-1];
@@ -23,6 +23,8 @@ public  class SommePartielle extends Thread {
     		t[pos][i]= new Force(f.Fx+g.Fx, f.Fy+g.Fy);
     	}
     	else {
+    		System.out.println(pos);
+    		System.out.println(i);
     		t[pos][i]=t[pos][i-1];
     	}
     		

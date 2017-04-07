@@ -46,7 +46,7 @@ public void afficherp(Graphics graphics, Particule p) {
 
 int width = getWidth();
 int height = getHeight();
-graphics.drawLine( 1, 1, 2, 2);
+graphics.drawLine( 1, 1, 1, 1);
 }
 
 }

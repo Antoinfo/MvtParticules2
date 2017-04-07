@@ -25,7 +25,7 @@ public class NewPos implements Runnable  {
 		int n=elements.length;
 		
 		double k=Math.log(n)/Math.log(2);
-		
+		/*
 		Force[][]  tableau = new  Force[n][(int) (k+1)];
 		
 		for (int i=0;i<n;i++){
@@ -57,8 +57,29 @@ public class NewPos implements Runnable  {
 		// faire le saut de pointeur sur les forces des particules: A FAIRE
 		
 		// puis faire postion après cette somme
-		
-		Force ftot=tableau[n][(int) (k+1)];
+		*/
+		for (int i=0;i<=k;i++){
+			Thread[] tabthread= new Thread[n];
+			for (int j=0;j<n; j++){
+				SautDepointeurs sdp= new SautDepointeurs(elements[numero].force, j);
+				tabthread[j]=new Thread(sdp );
+				tabthread[j].start();
+				
+			}
+			for (int j=0;j<n; j++){
+				
+				try {
+					tabthread[j].join();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+			
+			
+		}
+		Force ftot=elements[numero].force[0];
 		
 		
 		elements[numero].UpdatePosSpeed(ftot, pas);

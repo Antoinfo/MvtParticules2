@@ -15,20 +15,20 @@ public class GrosThread implements Runnable {
 
 	public void run ( ) {
 		int n=elements.length;
-		Thread[] tabthread= new Thread [n-numero+1];
+		Thread[] tabthread= new Thread [n-numero];
 		// on va jusqu'à N-num
 		
 		// le faire pour soi-même ?? j=numero ? le remettre à 0s
 
-		for (int j=numero;j<n;j++){
+		for (int j=0;j<n-numero;j++){
 			
 			
-			Calcul1ForceParticule s= new Calcul1ForceParticule(elements[numero], elements[j] );
+			Calcul1ForceParticule s= new Calcul1ForceParticule(elements[numero], elements[j+numero]);
 			tabthread[j]=new Thread(s);
 			tabthread[j].start();
 		}
 		
-		for (int j=numero;j<n;j++){
+		for (int j=0;j<n-numero;j++){
 			
 			
 			
